@@ -14,6 +14,11 @@ BOT_NAME = 'nse'
 SPIDER_MODULES = ['nse.spiders']
 NEWSPIDER_MODULE = 'nse.spiders'
 
+FEED_FORMAT = 'jsonlines'
+
+SPIDER_MIDDLEWARES = {
+   'scrapy_deltafetch.DeltaFetch': True,
+}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'nse (+http://www.yourdomain.com)'
