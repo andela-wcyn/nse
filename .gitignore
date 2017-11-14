@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Data
+nse-stock.jl
+
+# compiled
+*.pyc
