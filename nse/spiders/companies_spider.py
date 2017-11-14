@@ -1,6 +1,9 @@
 import time
+
 import scrapy
-from nse.items import NseItem
+
+from items import NseItem
+
 
 class CompaniesSpider(scrapy.Spider):
     name = "companies"
@@ -29,13 +32,15 @@ class CompaniesSpider(scrapy.Spider):
 
         item = NseItem()
         for index, company in enumerate(companies):
-            item = self.create_meta(item,[company, volume[index], highs[index],
-                                  lows[index], last_traded_prices[index],
-                                  previous_prices[index], changes[index]])
+            item = self.create_meta(item, [company, volume[index],
+                                    highs[index], lows[index],
+                                    last_traded_prices[index],
+                                    previous_prices[index], changes[index]])
             yield item
         # print("/n/n ***** Market Stats ***** /n/n", market_stats)
 
-    def create_meta(self, item, stock_data):
+    @staticmethod
+    def create_meta(item, stock_data):
         """
         Add data to the item
         """
