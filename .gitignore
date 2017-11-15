@@ -105,3 +105,4 @@ nse-stock.jl
 
 # compiled
 *.pyc
+/result.jl
