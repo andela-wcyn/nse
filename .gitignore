@@ -103,3 +103,4 @@ ENV/
 # Data
 *.jl
 *.csv
+/nse/app/client_secret.json
