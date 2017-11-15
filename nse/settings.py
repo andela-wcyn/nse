@@ -14,8 +14,8 @@ BOT_NAME = 'nse'
 SPIDER_MODULES = ['nse.spiders']
 NEWSPIDER_MODULE = 'nse.spiders'
 
-FEED_FORMAT = 'jsonlines'
-FEED_URI = 'nse-stocks-data.jl'
+FEED_FORMAT = 'csv'
+FEED_URI = 'nse-stocks-data.csv'
 
 # SPIDER_MIDDLEWARES = {
 #    'scrapy_deltafetch.DeltaFetch': True,

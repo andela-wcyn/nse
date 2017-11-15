@@ -101,8 +101,5 @@ ENV/
 .mypy_cache/
 
 # Data
-nse-stock.jl
-
-# compiled
-/result.jl
-/nse-stocks-data.jl
+*.jl
+*.csv
