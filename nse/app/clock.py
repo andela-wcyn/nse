@@ -1,21 +1,13 @@
-import logging
-import sys
-
-from apscheduler.schedulers.blocking import BlockingScheduler
-from rq import Queue
-
-from nse.app.worker import conn
-from nse.app.run import crawl_nse_site
-
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
-scheduler = BlockingScheduler()
-q = Queue(connection=conn)
+from run import crawl_nse_site
 
 
-def crawl_nse():
-    q.enqueue(crawl_nse_site())
+import schedule
+import time
 
+# Adjusting to UTC time on Heroku Server (3 hours behind)
+schedule.every().day.at("09:00").do(crawl_nse_site)
+schedule.every().day.at("14:00").do(crawl_nse_site)
 
-scheduler.add_job(crawl_nse)  # enqueue right away once
-scheduler.add_job(crawl_nse, 'interval', minutes=1)
-scheduler.start()
+while True:
+    schedule.run_pending()
+    time.sleep(60)  # wait one minute
