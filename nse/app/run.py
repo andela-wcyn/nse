@@ -3,7 +3,7 @@ import subprocess
 
 def crawl_nse_site():
     print "* Crawling NSE site... *\n"
-    subprocess.call(["scrapy", "crawl", "companies", "-o", "test.jl"])
+    subprocess.call(["scrapy", "crawl", "companies"])
     print "\n\n * Done Crawling *\n\n"
 
 if __name__ == '__main__':

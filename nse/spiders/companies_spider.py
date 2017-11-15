@@ -16,8 +16,6 @@ class CompaniesSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
-        # delayed_feed = response.xpath('//div[@class="marquee"]/span/text()'
-        #                               ).extract()
         market_stats = response.xpath('//table/tbody/tr/td//text()').extract()
         market_stats = [stat.strip() for stat in market_stats]
         market_stats = list(filter(None, market_stats))
@@ -37,7 +35,6 @@ class CompaniesSpider(scrapy.Spider):
                                     last_traded_prices[index],
                                     previous_prices[index], changes[index]])
             yield item
-        # print("/n/n ***** Market Stats ***** /n/n", market_stats)
 
     @staticmethod
     def create_meta(item, stock_data):

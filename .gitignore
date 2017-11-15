@@ -104,5 +104,5 @@ ENV/
 nse-stock.jl
 
 # compiled
-*.pyc
 /result.jl
+/nse-stocks-data.jl
