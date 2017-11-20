@@ -27,6 +27,5 @@ class GoogleSpreadSheets(object):
 
 if __name__ == "__main__":
     spread_sheet = GoogleSpreadSheets()
-    # spread_sheet.append_row(["Hello", "There", "You", "How", "Have", "You"])
 
 print "Done"
