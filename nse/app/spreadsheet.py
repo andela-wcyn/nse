@@ -55,3 +55,4 @@ class GoogleSpreadSheets(object):
 
 if __name__ == "__main__":
     spread_sheet = GoogleSpreadSheets()
+    print(spread_sheet.get_all_records())
