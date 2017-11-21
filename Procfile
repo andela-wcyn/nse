@@ -1,1 +1,1 @@
-worker: python nse/app/clock.py
+web: python nse/app/clock.py
