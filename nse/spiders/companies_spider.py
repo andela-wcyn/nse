@@ -10,7 +10,8 @@ class CompaniesSpider(scrapy.Spider):
 
     def start_requests(self):
         urls = [
-            'https://www.nse.co.ke/market-statistics.html'
+            'https://www.nse.co.ke/market-statistics.html',
+            'https://www.nse.co.ke/market-statistics.html?start=50'
         ]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
